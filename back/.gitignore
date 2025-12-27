@@ -1,0 +1,39 @@
+# --- PYTHON ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+
+# --- MODELE AI (Bardzo ważne!) ---
+# Nie wrzucamy plików binarnych modeli, są za ciężkie i powinny być wersjonowane inaczej
+*.pkl
+*.joblib
+*.h5
+*.onnx
+*.weights
+
+# --- DANE I LOGI ---
+# Nie wrzucamy pobranych danych giełdowych (lepiej pobrać je skryptem)
+*.csv
+*.json
+*.xlsx
+logs/
+*.log
+
+# --- JUPYTER NOTEBOOKS ---
+# Te pliki tworzy Jupyter przy checkpointach - nie chcemy ich na GitHubie
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# --- ŚRODOWISKO I SEKRETY ---
+.env
+.secrets
+.vscode/
+.idea/
+
+# --- SYSTEMOWE ---
+.DS_Store
+Thumbs.db
