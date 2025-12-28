@@ -6,6 +6,8 @@ __pycache__/
 venv/
 ENV/
 env/
+data/
+notebook.py
 
 # --- MODELE AI (Bardzo ważne!) ---
 # Nie wrzucamy plików binarnych modeli, są za ciężkie i powinny być wersjonowane inaczej
