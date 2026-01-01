@@ -48,4 +48,4 @@ def train_logic(ticker, start_date):
     pipeline.fit(X_train, y_train)
     y_pred = pipeline.predict(X_test)
 
-    return pipeline, accuracy_score(y_test, y_pred)
+    return pipeline, accuracy_score(y_test, y_pred), df.head(10)
