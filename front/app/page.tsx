@@ -12,7 +12,6 @@ async function getPredictionDetails(): Promise<PredictionData[]> {
 
     if (!res.ok) throw new Error('Failed to fetch data');
 
-    // Tutaj jawnie rzutujemy wynik na tablicę naszych obiektów
     const data: PredictionData[] = await res.json();
     return data;
   } catch (error) {

@@ -2,7 +2,6 @@
 
 import { Box, Text, Stack, HStack, Badge, Button, Table } from '@chakra-ui/react';
 
-// Przywrócone importy z podfolderu ./ui/
 import { StatLabel, StatRoot, StatValueText } from './ui/stat';
 import { ProgressBar, ProgressRoot } from './ui/progress';
 import {
@@ -34,11 +33,10 @@ export const PredictionResult = ({
       p="8"
       bg="bg.panel"
       boxShadow="sm"
-      width="100%" /* Komponent zajmuje 100% dostępnej szerokości */
+      width="100%"
       maxW="full"
     >
       <Stack gap="6">
-        {/* POPUP BUTTON - CHECK DATA */}
         <DialogRoot size="lg" placement="center">
           <DialogTrigger asChild>
             <Button variant="surface" colorPalette="blue" size="md" width="full">
@@ -77,7 +75,6 @@ export const PredictionResult = ({
           </DialogContent>
         </DialogRoot>
 
-        {/* MODEL INFO */}
         <HStack justify="space-between">
           <Text textStyle="md" color="fg.muted">
             Model Used:
@@ -89,7 +86,6 @@ export const PredictionResult = ({
 
         <hr />
 
-        {/* MAIN PREDICTION */}
         <StatRoot>
           <StatLabel textStyle="md">Prediction Result</StatLabel>
           <StatValueText fontSize="4xl" color={data.prediction === 1 ? 'green.500' : 'red.500'}>
@@ -97,7 +93,6 @@ export const PredictionResult = ({
           </StatValueText>
         </StatRoot>
 
-        {/* PROBABILITIES - FULL WIDTH */}
         <Stack gap="5" width="100%">
           <Box width="100%">
             <HStack justify="space-between" mb="2">
