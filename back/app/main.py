@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 
+from app.core.prompts.generate_tickers import generate_tickers
+
 from .routes import predictions
 
 app = FastAPI(title="Stock Prediction API")
@@ -9,6 +11,12 @@ app.include_router(predictions.router)
 @app.get("/")
 def home():
     return {"message": "Hello Financial API"}
+
+
+@app.get("/tickers")
+def get_tickers():
+    tickers = generate_tickers()
+    return {"response": tickers}
 
 
 if __name__ == "__main__":
