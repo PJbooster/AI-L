@@ -5,6 +5,8 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 ROOT_DIR = pathlib.Path(__file__).resolve().parent.parent.parent
 ENV_PATH = ROOT_DIR / ".env"
 
+print(ROOT_DIR)
+
 
 class Settings(BaseSettings):
     openai_api_key: str

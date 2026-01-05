@@ -9,6 +9,7 @@ export function Card() {
     { model_used: 'XGBoost', prediction: 0, probability_rise: 0.3, probability_fall: 0.7 },
     { model_used: 'NeuralNet', prediction: 1, probability_rise: 0.85, probability_fall: 0.15 },
     { model_used: 'SVM', prediction: 0, probability_rise: 0.45, probability_fall: 0.55 },
+    { model_used: 'SVM', prediction: 0, probability_rise: 0.45, probability_fall: 0.55 },
   ];
 
   return (
