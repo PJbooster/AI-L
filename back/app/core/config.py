@@ -13,6 +13,7 @@ class Settings(BaseSettings):
     gemini_api_key: str
     app_name: str = "Financial AI Agent"
     debug: bool = False
+    database_url: str
     model_config = SettingsConfigDict(env_file=ENV_PATH, env_file_encoding="utf-8")
 
 

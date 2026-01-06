@@ -12,35 +12,35 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
-  backend:
-    build: ./back
-    container_name: fastapi_app
-    volumes:
-      - ./back:/code
-    ports:
-      - "8000:8000"
-    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload --reload-dir /code
-    environment:
-      - DATABASE_URL=${DATABASE_URL}
-    depends_on:
-      - db
+  # backend:
+  #   build: ./back
+  #   container_name: fastapi_app
+  #   volumes:
+  #     - ./back:/code
+  #   ports:
+  #     - "8000:8000"
+  #   command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload --reload-dir /code
+  #   environment:
+  #     - DATABASE_URL=${DATABASE_URL}
+  #   depends_on:
+  #     - db
 
-  front:
-    build: ./front
-    container_name: nextjs_app
-    ports:
-      - "3000:${FRONT_PORT}"
-    volumes:
-      - ./front:/app
-      # Ważne: to chroni node_modules wewnątrz kontenera przed nadpisaniem przez system hosta
-      - /app/node_modules
-      - /app/.next
-    environment:
-      - WATCHPACK_POLLING=true
-      - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
-      - INTERNAL_API_URL=http://backend:8000
-    depends_on:
-      - backend
+  # front:
+  #   build: ./front
+  #   container_name: nextjs_app
+  #   ports:
+  #     - "3000:${FRONT_PORT}"
+  #   volumes:
+  #     - ./front:/app
+  #     # Ważne: to chroni node_modules wewnątrz kontenera przed nadpisaniem przez system hosta
+  #     - /app/node_modules
+  #     - /app/.next
+  #   environment:
+  #     - WATCHPACK_POLLING=true
+  #     - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
+  #     - INTERNAL_API_URL=http://backend:8000
+  #   depends_on:
+  #     - backend
 
 volumes:
   postgres_data:
