@@ -12,7 +12,6 @@ import {
 } from '@chakra-ui/react';
 import { LuSettings, LuPlay, LuCalendar } from 'react-icons/lu';
 
-// Przykładowe dane zgodne z Twoim formularzem
 const mockModels = [
   {
     id: '1',

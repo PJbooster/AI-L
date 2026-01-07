@@ -12,7 +12,7 @@ import {
   MenuTrigger,
   IconButton,
 } from '@chakra-ui/react';
-import { LuUser, LuSettings, LuLogOut, LuChevronDown } from 'react-icons/lu'; // Używamy Lucide Icons (standard w v3)
+import { LuUser, LuSettings, LuLogOut, LuChevronDown } from 'react-icons/lu';
 import Link from 'next/link';
 
 export const Topbar = () => {
@@ -27,14 +27,12 @@ export const Topbar = () => {
     >
       <Container maxW="container.xl">
         <Flex align="center" justify="space-between">
-          {/* Logo Section */}
           <Link href="/" passHref>
             <Heading size="md" color="teal.500" fontWeight="bold" cursor="pointer">
               FinAnalyze AI
             </Heading>
           </Link>
 
-          {/* Navigation & User Section */}
           <Stack direction="row" gap="8" align="center">
             <Stack direction="row" gap="6" display={{ base: 'none', md: 'flex' }}>
               <Link href="/" passHref>
@@ -70,7 +68,6 @@ export const Topbar = () => {
                 </Button>
               </MenuTrigger>
 
-              {/* Dodajemy portal i konkretne pozycjonowanie */}
               <MenuContent
                 minW="150px"
                 zIndex="popover"

@@ -12,18 +12,15 @@ import {
   SimpleGrid,
   Separator,
   HStack,
-  createListCollection,
 } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { LuArrowLeft, LuDatabase, LuSave, LuTrash2 } from 'react-icons/lu';
+import { LuArrowLeft, LuSave, LuTrash2 } from 'react-icons/lu';
 import Link from 'next/link';
 import api from '@/lib/axios';
 import { Field } from './ui/field';
 import { NativeSelectField, NativeSelectRoot } from './ui/native-select';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
-import axios from 'axios';
-import { toaster } from '@/components/ui/toaster'; // Importuj obiekt toasterimport { useForm } from 'react-hook-form';
+import { toaster } from '@/components/ui/toaster';
 import { useForm } from 'react-hook-form';
 
 interface ModelFormData {
@@ -41,7 +38,7 @@ export default function CreateModelForm() {
   const [recordCount, setRecordCount] = useState(0);
   const [modelType, setModelType] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter(); // Inicjalizacja routera
+  const router = useRouter();
 
   const { register, handleSubmit, watch } = useForm<ModelFormData>({
     defaultValues: {
