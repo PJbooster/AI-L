@@ -1,7 +1,8 @@
-from back.app.enums import Classifier, FinancingType
 from sqlalchemy import Column, Date, Enum, Integer, String
 
 from app.database import Base
+from app.enums import Classifier, FinancingType
+from app.schemas import AIModelCreate
 
 
 class AIModel(Base):
@@ -14,3 +15,7 @@ class AIModel(Base):
     dataset_ticker = Column(String)  # oneToONE
     start_date = Column(Date)
     end_date = Column(Date)
+
+    @classmethod
+    def from_schema(cls, schema: AIModelCreate):
+        return cls(**schema.model_dump())

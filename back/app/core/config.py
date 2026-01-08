@@ -9,6 +9,7 @@ print(ROOT_DIR)
 
 
 class Settings(BaseSettings):
+    app_env: str
     openai_api_key: str
     gemini_api_key: str
     app_name: str = "Financial AI Agent"
